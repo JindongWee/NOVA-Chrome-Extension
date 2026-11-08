@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>NOVA · New Tab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-wallpaper="aurora" data-accent="blue">
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <div class="grain"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="NOVA 首页">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span class="brand-name">NOVA</span>
+      <span class="brand-divider"></span>
+      <span class="brand-sub">NEW TAB</span>
+    </a>
+    <div class="top-actions">
+      <span class="local-label"><span class="status-dot"></span> LOCAL SPACE</span>
+      <button class="icon-button" id="settingsBtn" title="个性化设置" aria-label="个性化设置">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4Z"/><path d="m19.4 13.5 1.1.9-1.1 1.9-1.4-.5a7.8 7.8 0 0 1-1.5.9l-.2 1.5h-2.2l-.4-1.4a7.7 7.7 0 0 1-1.7 0l-.8 1.2-2-.9.2-1.5a7.7 7.7 0 0 1-1.2-1.3l-1.5.1-.7-2.1 1.2-.8a7.7 7.7 0 0 1-.1-1.7l-1.3-.7.8-2 1.5.2a7.7 7.7 0 0 1 1.3-1.2l-.1-1.5 2.1-.7.8 1.2a7.7 7.7 0 0 1 1.7-.1l.7-1.3 2 .8-.2 1.5a7.7 7.7 0 0 1 1.2 1.3l1.5-.1.7 2.1-1.2.8a7.7 7.7 0 0 1 .1 1.7Z"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main class="main-content">
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR PERSONAL SPACE</div>
+      <div class="clock" id="clock">09:41<span class="clock-seconds">:08</span></div>
+      <div class="date-row">
+        <span id="dateText">星期日 · 2026年11月8日</span>
+        <span class="date-separator"></span>
+        <span id="greeting">保持专注，继续探索。</span>
+      </div>
+
+      <form class="search-box" id="searchForm">
+        <button class="search-engine" type="button" id="engineBtn" aria-label="切换搜索引擎">
+          <span class="engine-glyph" id="engineGlyph">G</span>
+          <span class="engine-name" id="engineName">Google</span>
+          <svg class="chevron" viewBox="0 0 12 12" aria-hidden="true"><path d="m3 4.5 3 3 3-3"/></svg>
+        </button>
+        <span class="search-divider"></span>
+        <input id="searchInput" type="search" autocomplete="off" placeholder="搜索网页，或输入网址…" aria-label="搜索网页">
+        <kbd class="enter-hint">ENTER ↵</kbd>
+        <button class="search-submit" type="submit" aria-label="搜索">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.3"/><path d="m16 16 4.2 4.2"/></svg>
+        </button>
+        <div class="engine-menu" id="engineMenu" hidden>
+          <button type="button" data-engine="google"><span class="engine-glyph">G</span>Google</button>
+          <button type="button" data-engine="bing"><span class="engine-glyph bing">b</span>Bing</button>
+          <button type="button" data-engine="duck"><span class="engine-glyph duck">D</span>DuckDuckGo</button>
+        </div>
+      </form>
+
+      <section class="shortcuts-section">
+        <div class="section-heading">
+          <span>QUICK ACCESS</span>
+          <span class="section-caption">常用网站</span>
+        </div>
+        <div class="shortcut-grid" id="shortcutGrid"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>DESIGNED FOR FOCUS</span>
+    <span class="footer-center"><span class="footer-dot"></span> ALL SYSTEMS READY</span>
+    <span id="footerDate">NOVA / 01</span>
+  </footer>
+
+  <div class="modal-backdrop" id="modalBackdrop" hidden>
+    <section class="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+      <div class="modal-header">
+        <div>
+          <div class="modal-eyebrow">PERSONALIZE YOUR SPACE</div>
+          <h2 id="settingsTitle">个性化设置</h2>
+        </div>
+        <button class="icon-button close-button" id="closeSettings" aria-label="关闭设置">×</button>
+      </div>
+
+      <div class="settings-content">
+        <div class="setting-group">
+          <div class="setting-title">背景氛围 <span>BACKGROUND</span></div>
+          <div class="wallpaper-options">
+            <button class="wallpaper-choice selected" data-wallpaper="aurora"><span class="wallpaper-preview aurora-preview"></span><span>极光蓝</span></button>
+            <button class="wallpaper-choice" data-wallpaper="midnight"><span class="wallpaper-preview midnight-preview"></span><span>午夜黑</span></button>
+            <button class="wallpaper-choice" data-wallpaper="violet"><span class="wallpaper-preview violet-preview"></span><span>暮色紫</span></button>
+            <button class="wallpaper-choice" data-wallpaper="slate"><span class="wallpaper-preview slate-preview"></span><span>石墨灰</span></button>
+          </div>
+          <label class="upload-wallpaper">
+            <span class="upload-icon">＋</span>
+            <span>上传自己的壁纸</span>
+            <span class="upload-note">JPG / PNG，建议小于 3 MB</span>
+            <input id="wallpaperUpload" type="file" accept="image/png,image/jpeg,image/webp">
+          </label>
+          <button class="text-button" id="clearWallpaper" type="button">恢复默认背景</button>
+        </div>
+
+        <div class="setting-group">
+          <div class="setting-title">强调色 <span>ACCENT COLOR</span></div>
+          <div class="accent-options">
+            <button class="accent-choice selected" data-accent="blue" aria-label="蓝色"><span class="accent-dot blue-dot"></span>蓝色</button>
+            <button class="accent-choice" data-accent="purple" aria-label="紫色"><span class="accent-dot purple-dot"></span>紫色</button>
+            <button class="accent-choice" data-accent="mint" aria-label="薄荷绿"><span class="accent-dot mint-dot"></span>薄荷绿</button>
+          </div>
+        </div>
+
+        <div class="setting-group">
+          <div class="setting-title">搜索引擎 <span>SEARCH ENGINE</span></div>
+          <select id="engineSelect" class="select-control">
+            <option value="google">Google</option>
+            <option value="bing">Bing</option>
+            <option value="duck">DuckDuckGo</option>
+          </select>
+        </div>
+
+        <div class="setting-group">
+          <div class="setting-title">快捷入口 <span>SHORTCUTS</span></div>
+          <div class="shortcut-editor" id="shortcutEditor"></div>
+          <form class="add-shortcut-form" id="addShortcutForm">
+            <input id="shortcutName" type="text" maxlength="14" placeholder="网站名称" required>
+            <input id="shortcutUrl" type="url" placeholder="https://example.com" required>
+            <button type="submit">添加</button>
+          </form>
+          <p class="setting-hint">最多显示 8 个入口。链接仅保存在本机浏览器中。</p>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <span class="save-status" id="saveStatus">设置自动保存</span>
+        <button class="done-button" id="doneSettings" type="button">完成</button>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="newtab.js"></script>
+</body>
+</html>
