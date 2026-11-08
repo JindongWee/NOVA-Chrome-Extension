@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "NOVA 新标签页",
+  "version": "1.0.0",
+  "description": "极简深色风格的新标签页：时钟、搜索、快捷入口与个性化背景。",
+  "permissions": ["storage"],
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  }
+}
