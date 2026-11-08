@@ -2,6 +2,11 @@
 
 NOVA 是一个 Manifest V3 Chrome 新标签页扩展，提供简洁的深色新标签页。
 
+## 下载
+[下载最新源码 ZIP](https://github.com/JindongWee/NOVA-Chrome-Extension/archive/refs/heads/main.zip)
+
+下载后解压，扩展程序目录为 `NOVA-Chrome-Extension-main/NOVA_NewTab`。
+
 ## 功能
 - 数字时钟与中文日期
 - 搜索框，支持 Google、Bing、DuckDuckGo
@@ -12,7 +17,7 @@ NOVA 是一个 Manifest V3 Chrome 新标签页扩展，提供简洁的深色新�
 - 设置保存在 Chrome 本地存储中
 
 ## 安装
-1. 下载本仓库的 ZIP 压缩包并解压。
+1. 下载上面的 ZIP 压缩包并解压。
 2. 打开 Chrome，访问 `chrome://extensions`。
 3. 开启右上角的「开发者模式」。
 4. 点击「加载已解压的扩展程序」。
